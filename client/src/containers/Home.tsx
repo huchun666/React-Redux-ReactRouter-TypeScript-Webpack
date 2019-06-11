@@ -1,9 +1,10 @@
 import * as React from "react";
-import { addOne } from "../actions/index";
+import { addOne, test } from "../actions/index";
 import { connect } from "react-redux";
 
 interface IProps {
     addOne: Function,
+    test: Function,
     goods: number
 }
 export interface IState {
@@ -23,10 +24,14 @@ class Home extends React.Component<IProps, IState>{
      * handleAddOne
      */
     public handleAddOne = () => {
-        this.props.addOne();
-        this.setState((preState) => {
-            return {aaa: preState.aaa + 1}
-        })
+        // this.props.addOne();
+        // this.setState((preState) => {
+        //     return {aaa: preState.aaa + 1}
+        // })
+        this.props.test({
+            username: 'huchun',
+            password: '123456'
+        });
     }
 
     render() {
@@ -43,6 +48,6 @@ const mapStateToProps = (state: any) => {
         goods: state.goods
     }
 };
-const mapDispatchToProps = {addOne};
+const mapDispatchToProps = {addOne, test};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

@@ -59,13 +59,13 @@ module.exports = appInfo => {
     },
   };
   config.cors = {
-    origin: ['http://localhost:3000'],
+    origin: ['http://localhost:8888'],
     alloMethods: 'GET,POST',
     credentials: true
   }
 
   config.security = {
-    domainWhiteList: ['http://localhost:3000'],
+    domainWhiteList: ['http://localhost:8888'],
     csrf: {
       enable: false,
     },
